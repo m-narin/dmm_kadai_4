@@ -1,4 +1,6 @@
 class BooksController < ApplicationController
+  before_action :is_matching_created_user, only: [:edit, :update, :destroy]
+
   def index
     @books = Book.all
     @book = Book.new
@@ -18,6 +20,12 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
   end
 
+  def edit
+  end
+
+  def update
+  end
+
   def destroy
     book = Book.find(params[:id])
     book.destroy
@@ -27,5 +35,13 @@ class BooksController < ApplicationController
   private
   def book_params
     params.require(:book).permit(:title, :body)
+  end
+
+  def is_matching_created_user
+    book = Book.find(params[:id])
+    user = book.user
+    if user.id != current_user.id
+      redirect_to book_path(book.id)
+    end
   end
 end
