@@ -4,7 +4,8 @@
     <tr>
       <td>
         <%= link_to user_path(book.user.id) do %>
-          <%= image_tag book.user.get_profile_image(100,100) %>
+          <%= image_tag book.user.get_profile_image(100,100) %><br>
+          <%= link_to book.user.name, edit_user_path(book.user.id) %>
         <% end %>
       </td>
       <td>
