@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-      <h1>Editing book</h1>
+      <h1>Editing Book</h1>
       <%= render "shared/error_messages", obj:@book %>
       <%= render "shared/form", book:@book, button_text:"Update Book" %>
       <%= link_to "Show", book_path(@book.id) %> |
