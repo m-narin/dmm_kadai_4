@@ -71,7 +71,10 @@
     </header>
     <main>
       <p id="notice">
-        <%= flash[:created] %>
+        <%= flash[:notice] %>
+        <%= flash[:user_edited] %>
+        <%= flash[:book_created] %>
+        <%= flash[:book_edited] %>
       </p>
       <%= yield %>
     </main>
