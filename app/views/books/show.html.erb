@@ -9,6 +9,9 @@
     <div class="col-md-8 offset-md-1">
       <h2>Book detail</h2>
       <%= render "shared/book_detail", book:@book %>
+      <%= render "shared/book_comment_list", book_comments: @book.book_comments %>
+      <%= render "shared/error_messages", obj:@book_comment %>
+      <%= render "shared/book_comment_form", book: @book, book_comment: @book_comment %>
     </div>
   </div>
 </div>

@@ -20,6 +20,7 @@
         </td>
         <td><%= book.body %></td>
         <td><%= render "shared/favorite_button", book:book %></td>
+        <td>コメント数: <%= book.book_comments.count %></td>
       </tr>
     <% end %>
   </tbody>

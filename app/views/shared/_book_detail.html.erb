@@ -11,8 +11,9 @@
         <%= link_to book.title, book_path(book.id) %>
       </td>
       <td><%= book.body %></td>
-      <% if book.user == current_user %>
       <td><%= render "shared/favorite_button", book:@book %></td>
+      <td>コメント数: <%= @book.book_comments.count %></td>
+      <% if book.user == current_user %>
       <td><%= link_to "Edit", edit_book_path(book.id), class:"btn btn-sm btn-success" %></td>
       <td><%= link_to "Destroy", book_path(book.id), method: :delete, class:"btn btn-sm btn-danger", "data-confirm" => "本当に消しますか?" %></td>
       <% end %>
